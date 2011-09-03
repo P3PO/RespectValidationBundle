@@ -1,0 +1,7 @@
+parameters:
+#    respect_validation.example.class: Respect\ValidationBundle\Example
+
+services:
+#    respect_validation.example:
+#        class: %respect_validation.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
