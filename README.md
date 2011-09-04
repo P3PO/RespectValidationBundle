@@ -9,7 +9,7 @@ Installation
   1. Add this bundle and Respect library to your project as Git submodules:
 
           $ git submodule add git://github.com/gpupo/RespectValidationBundle.git vendor/bundles/Respect/ValidationBundle 
-          $ git submodule add git://github.com/Respect/Validation.git vendor/Respect/Validation
+          $ git submodule add git://github.com/Respect/Validation.git bundles/Respect/Validation-src
 
      or via Vendor Libraries with bin/vendors and deps (add to deps file and run `bin/vendors install`):
 
