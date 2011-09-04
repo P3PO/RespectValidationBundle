@@ -55,7 +55,7 @@ Installation
 Usage
 ============
 
-Usa as service respect.validator:
+Usa as service respect.validator (`unstable`):
     
         //...
         class HomeController extends Controller
