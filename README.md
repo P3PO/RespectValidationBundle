@@ -18,7 +18,13 @@ Installation
               target=bundles/Respect/ValidationBundle  
           [RespectValidation]
                 git=git://github.com/Respect/Validation.git
-                target=Respect/Validation
+                target=bundles/Respect/Validation-src
+     
+    fix path:
+       
+           $ pushd  vendor/bundles/Respect/;
+           $ ln -sn Validation-src/library/Respect/Validation .
+           $ popd;
         
 
   2. Register the namespace `Respect` to your project's autoloader bootstrap script:
@@ -43,5 +49,50 @@ Installation
           }
 
 
+
+
+
+Usage
+============
+
+Usa as service respect.validator:
+    
+        //...
+        class HomeController extends Controller
+        {
+            
+            public function indexAction()
+            {
+                
+                $number = 123;
+                $x = $this->get('respect.validator')->numeric()->validate($number);//true
+                
+        //...
+        
+Use as Alias:
+    
+        <?php
+        
+        namespace Acme\DemoBundle\Controller;
+        
+        use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+        use Respect\Validation\Validator as v;
+        class HomeController extends Controller
+        {
+            
+            public function indexAction()
+            {
+        
+                $validUsername = v::alnum()
+                ->noWhitespace()
+                ->length(1,15);
+                
+                $x = $validUsername->validate('alganet'); //true
+            
+            
+        //...
+
+        
+See documentation on https://github.com/Respect/Validation
 
 

@@ -1,5 +1,5 @@
 parameters:
-    respect_validator.class: Respect\ValidationBundle\Services\Validator
+    respect_validation_validator.class: Respect\ValidationBundle\Services\Validator
 services:
     respect.validator:
-        class: %respect_validator.class%
+        class: %respect_validation_validator.class%

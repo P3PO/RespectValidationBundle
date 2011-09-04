@@ -7,7 +7,7 @@
 
 namespace Respect\ValidationBundle\Services;
 
-Class Validator extends Respect\Validation\library\Respect\Validator
+Class Validator extends \Respect\Validation\Validator
 {
     
 }
