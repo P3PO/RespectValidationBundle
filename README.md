@@ -1,6 +1,6 @@
 TODO
 ====
-    1. All :D
+    1. Fix false validation on service
 
 Installation
 ============
@@ -19,12 +19,7 @@ Installation
           [RespectValidation]
                 git=git://github.com/Respect/Validation.git
                 target=bundles/Respect/Validation-src
-     
-    fix path:
-       
-           $ pushd  vendor/bundles/Respect/;
-           $ ln -sn Validation-src/library/Respect/Validation .
-           $ popd;
+
         
 
   2. Register the namespace `Respect` to your project's autoloader bootstrap script:
@@ -48,7 +43,12 @@ Installation
               );
           }
 
-
+     
+  4. Fix path:
+       
+           $ pushd  vendor/bundles/Respect/;
+           $ ln -sn Validation-src/library/Respect/Validation .
+           $ popd;
 
 
 
