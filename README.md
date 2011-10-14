@@ -6,32 +6,27 @@ Installation
 ============
 
 
-  1. Add this bundle and Respect library to your project as Git submodules:
-
-          $ git submodule add git://github.com/gpupo/RespectValidationBundle.git vendor/bundles/Respect/ValidationBundle 
-          $ git submodule add git://github.com/Respect/Validation.git bundles/Respect/Validation-src
-
-     or via Vendor Libraries with bin/vendors and deps (add to deps file and run `bin/vendors install`):
+  1. Add reps to your deps file:
 
           [RespectValidationBundle]
               git=git://github.com/gpupo/RespectValidationBundle.git
               target=bundles/Respect/ValidationBundle  
           [RespectValidation]
                 git=git://github.com/Respect/Validation.git
-                target=bundles/Respect/Validation-src
+                target=Respect/Validation
 
-        
+  2. run `bin/vendors install`)
 
-  2. Register the namespace `Respect` to your project's autoloader bootstrap script:
+  3. Register the namespace `Respect` to your project's autoloader bootstrap script:
 
           //app/autoload.php
           $loader->registerNamespaces(array(
                 // ...
-                'Respect'    => __DIR__.'/../vendor/bundles',
+                'Respect'    => __DIR__.'/../vendor/Respect/library',
                 // ...
           ));
 
-  3. Add this bundle to your application's kernel:
+  4 Add this bundle to your application's kernel:
 
           //app/AppKernel.php
           public function registerBundles()
@@ -43,33 +38,23 @@ Installation
               );
           }
 
-     
-  4. Fix path:
-       
-           $ pushd  vendor/bundles/Respect/;
-           $ ln -sn Validation-src/library/Respect/Validation .
-           $ popd;
 
+##Usage
 
-
-Usage
-============
-
-Usa as service respect.validator (`unstable`):
+### Use as service respect.validator (`unstable`):
     
         //...
         class HomeController extends Controller
         {
-            
             public function indexAction()
             {
-                
                 $number = 123;
                 $x = $this->get('respect.validator')->numeric()->validate($number);//true
-                
         //...
-        
-Use as Alias:
+
+
+### Use as Alias:
+
     
         <?php
         
@@ -92,6 +77,8 @@ Use as Alias:
             
         //...
 
+        
+## Documentation
         
 See documentation on https://github.com/Respect/Validation
 
