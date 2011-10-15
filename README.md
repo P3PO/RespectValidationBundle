@@ -22,7 +22,7 @@ Installation
           //app/autoload.php
           $loader->registerNamespaces(array(
                 // ...
-                'Respect'    => __DIR__.'/../vendor/Respect/library',
+                'Respect'    => __DIR__.'/../vendor/Respect/Validation/library',
                 // ...
           ));
 
